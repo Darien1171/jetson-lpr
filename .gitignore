@@ -1,28 +1,5 @@
-# ==========================================
-# ARCHIVOS QUE NO DEBEN SUBIRSE A GITHUB
-# ==========================================
-
-# Archivos binarios del sistema
-*.msi
-*.exe
-*.dll
-*.so
-*.dylib
-
-# Credenciales y configuración sensible
-config/credentials.json
-config/*_secret*
-*.key
-*.pem
-*.p12
-
-# Datos de entrenamiento y resultados
-results/
-logs/
-*.log
-*.svclog
-
-# Entorno virtual Python
+sort/
+torchvision/
 jetson_env/
 venv/
 env/
@@ -30,61 +7,36 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Archivos temporales
+*.msi
+*.exe
+*.dll
+*.so
+results/
+logs/
+*.log
+*.svclog
 *.tmp
 *.temp
 temp/
 tmp/
 .cache/
-.pytest_cache/
-
-# Archivos de video y imágenes grandes
+.env
+*.local
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-*
+screenshots/
+snapshots/
+detections_*.jsonl
+tesseract_detections_*.jsonl
 *.mp4
 *.avi
 *.mov
 *.mkv
 videos/
 large_datasets/
-
-# Archivos de configuración específicos del sistema
-.env
-.local
-*.local
-
-# Archivos de Wine
-.wine/
-*.wine
-
-# Archivos de sistema
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-*~
-
-# Archivos de IDE
-.vscode/
-.idea/
-*.sublime-*
-
-# Archivos específicos del proyecto que no deben subirse
-onvifdm.zip
-odm-v2.2.250r.msi
-winehq.key
-
-# Capturas y snapshots
-screenshots/
-snapshots/
-*.png
-*.jpg
-*.jpeg
-!docs/images/*.png
-!docs/images/*.jpg
-
-# Archivos de detección (pueden ser grandes)
-detections_*.jsonl
-tesseract_detections_*.jsonl
