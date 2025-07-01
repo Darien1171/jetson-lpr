@@ -1,0 +1,137 @@
+# ===============================================
+# LPR (License Plate Recognition) Requirements
+# Proyecto: Automatic License Plate Recognition using YOLOv8
+# Optimizado para: Windows 11, Python 3.8+, CUDA opcional
+# Última actualización: Junio 2025
+# ===============================================
+
+# CORE DEEP LEARNING FRAMEWORKS
+# ----------------------------------------------
+ultralytics>=8.2.0               # YOLOv8/YOLOv11 - versión más reciente estable
+torch>=2.0.0,<2.4.0             # PyTorch con soporte CUDA 11.8/12.1
+torchvision>=0.15.0,<0.19.0     # Transformaciones de imágenes para PyTorch
+torchaudio>=2.0.0,<2.4.0        # Audio support (opcional pero recomendado)
+
+# COMPUTER VISION & IMAGE PROCESSING
+# ----------------------------------------------
+opencv-python>=4.8.0,<4.11.0    # OpenCV para procesamiento de imágenes
+opencv-contrib-python>=4.8.0,<4.11.0  # Módulos adicionales de OpenCV
+Pillow>=10.0.0,<11.0.0          # PIL/Pillow para manipulación de imágenes
+imageio>=2.31.0                 # Lectura/escritura de imágenes y videos
+scikit-image>=0.21.0            # Algoritmos adicionales de procesamiento
+
+# OCR (Optical Character Recognition)
+# ----------------------------------------------
+easyocr>=1.7.0                  # OCR principal para placas
+pytesseract>=0.3.10             # OCR alternativo (backup)
+paddlepaddle>=2.5.0             # Backend alternativo para EasyOCR
+paddleocr>=2.7.0                # OCR alternativo especializado
+
+# NUMERICAL COMPUTING & DATA PROCESSING
+# ----------------------------------------------
+numpy>=1.24.0,<2.0.0            # Computación numérica base
+scipy>=1.11.0,<1.14.0           # Algoritmos científicos (interpolación, filtros)
+pandas>=2.0.0,<2.3.0            # Manipulación de datos CSV
+matplotlib>=3.7.0,<3.9.0        # Visualización de datos
+seaborn>=0.12.0                 # Visualización estadística avanzada
+
+# TRACKING & MOTION DETECTION
+# ----------------------------------------------
+filterpy>=1.4.5                 # Filtros de Kalman para tracking SORT
+lap>=0.4.0                      # Linear Assignment Problem solver
+cython-bbox>=0.1.3              # Bounding box operations optimizadas
+
+# GUI & USER INTERFACE
+# ----------------------------------------------
+tkinter>=8.6                    # GUI nativa (incluida en Python)
+customtkinter>=5.2.0            # GUI moderna mejorada (opcional)
+pillow>=10.0.0                  # Soporte de imágenes para GUI
+
+# VIDEO PROCESSING & CODECS
+# ----------------------------------------------
+imageio-ffmpeg>=0.4.9           # Codecs de video FFmpeg
+moviepy>=1.0.3                  # Edición de video avanzada (opcional)
+
+# PERFORMANCE OPTIMIZATION
+# ----------------------------------------------
+psutil>=5.9.0                   # Monitoreo de sistema y recursos
+memory-profiler>=0.61.0         # Profiling de memoria (desarrollo)
+py-cpuinfo>=9.0.0              # Información del CPU
+
+# UTILITIES & HELPERS
+# ----------------------------------------------
+tqdm>=4.65.0                    # Barras de progreso
+colorama>=0.4.6                 # Colores en terminal (Windows)
+requests>=2.31.0                # HTTP requests para descargas
+urllib3>=2.0.0,<3.0.0          # HTTP client bajo nivel
+
+# DEVELOPMENT & TESTING (opcional)
+# ----------------------------------------------
+pytest>=7.4.0                  # Testing framework
+black>=23.0.0                   # Code formatter
+flake8>=6.0.0                   # Linting
+jupyterlab>=4.0.0              # Jupyter notebooks para desarrollo
+
+# DEPLOYMENT & PACKAGING (opcional)
+# ----------------------------------------------
+pyinstaller>=5.13.0             # Crear ejecutables standalone
+auto-py-to-exe>=2.40.0         # GUI para PyInstaller
+
+# ===============================================
+# NOTAS DE INSTALACIÓN
+# ===============================================
+
+# INSTALACIÓN BÁSICA (recomendada):
+# pip install -r requirements.txt
+
+# INSTALACIÓN CON GPU CUDA (recomendada para mejor rendimiento):
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# pip install -r requirements.txt
+
+# INSTALACIÓN MÍNIMA (solo core):
+# pip install ultralytics opencv-python easyocr numpy scipy pandas filterpy
+
+# VERIFICAR INSTALACIÓN:
+# python -c "import torch; print(f'PyTorch: {torch.__version__}'); print(f'CUDA disponible: {torch.cuda.is_available()}')"
+# python -c "import ultralytics; print(f'Ultralytics: {ultralytics.__version__}')"
+# python -c "import cv2; print(f'OpenCV: {cv2.__version__}')"
+# python -c "import easyocr; print('EasyOCR instalado correctamente')"
+
+# ===============================================
+# RESOLUCIÓN DE PROBLEMAS COMUNES
+# ===============================================
+
+# 1. Error de CUDA:
+#    - Instalar CUDA Toolkit 11.8 o 12.1
+#    - Verificar compatibilidad GPU: https://developer.nvidia.com/cuda-gpus
+
+# 2. Error de EasyOCR:
+#    - pip install --upgrade easyocr
+#    - Asegurar conexión a internet para descarga de modelos
+
+# 3. Error de OpenCV:
+#    - pip uninstall opencv-python opencv-contrib-python
+#    - pip install opencv-contrib-python
+
+# 4. Problemas de memoria:
+#    - Reducir batch_size en configuración YOLO
+#    - Usar imgsz=640 o menor
+
+# 5. GUI no funciona:
+#    - En sistemas sin GUI: usar solo main_final.py
+#    - En WSL: instalar XServer
+
+# ===============================================
+# OPTIMIZACIONES DE RENDIMIENTO
+# ===============================================
+
+# Para máximo rendimiento:
+# - GPU NVIDIA con CUDA
+# - RAM >= 16GB
+# - SSD para almacenamiento
+# - Python 3.9-3.11 (mejor compatibilidad)
+
+# Variables de entorno recomendadas:
+# export CUDA_VISIBLE_DEVICES=0
+# export OMP_NUM_THREADS=4
+# export MKL_NUM_THREADS=4
