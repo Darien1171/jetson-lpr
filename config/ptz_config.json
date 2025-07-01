@@ -1,21 +1,39 @@
 {
     "camera": {
         "ip": "192.168.1.101",
+        "rtsp_urls": [
+            "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=2",
+            "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=1",
+            "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=0",
+            "rtsp://admin:admin@192.168.1.101:554/stream1",
+            "rtsp://admin:admin@192.168.1.101:554/stream2"
+        ],
         "rtsp_url": "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=1",
         "user": "admin",
         "password": "admin"
     },
-    "tesseract_optimization": {
-        "capture_target_fps": 15,
-        "display_target_fps": 12,
+    "robust_optimization": {
+        "capture_target_fps": 20,
+        "display_target_fps": 15,
         "ai_process_every": 4,
         "display_scale": 0.3,
-        "ocr_timeout": 0.8,
+        "ocr_timeout": 0.6,
+        "max_consecutive_errors": 50,
+        "frame_validation_enabled": true,
+        "auto_reconnect_enabled": true,
+        "hardware_decoder_enabled": true
+    },
+    "tesseract_optimization": {
         "psm_mode": "8",
         "oem_mode": "3",
         "whitelist": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
         "preprocessing_enabled": true,
-        "cache_enabled": true
+        "cache_enabled": true,
+        "capture_target_fps": 15,
+        "display_target_fps": 12,
+        "ai_process_every": 4,
+        "display_scale": 0.3,
+        "ocr_timeout": 0.8
     },
     "processing": {
         "confidence_threshold": 0.25,
