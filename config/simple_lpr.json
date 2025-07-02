@@ -1,11 +1,12 @@
 {
   "camera": {
+    "primary_url": "rtsp://admin:admin@192.168.1.101/video2",
     "rtsp_urls": [
-      "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=2",
-      "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=1",
-      "rtsp://admin:admin@192.168.1.101:554/stream1"
+      "rtsp://admin:admin@192.168.1.101/video2"
     ],
-    "fallback_video": "./videos/video2.mp4"
+    "fallback_video": "./videos/video2.mp4",
+    "config_type": "ffmpeg_optimized",
+    "pipeline_name": "FFMPEG-Optimized"
   },
   "processing": {
     "ai_every_frames": 4,
@@ -16,6 +17,18 @@
   "display": {
     "show_video": true,
     "scale": 0.4,
-    "window_title": "LPR Simple \ud83c\udfaf"
+    "window_title": "LPR Simple \ud83c\udfaf (FFMPEG-Optimized)"
+  },
+  "optimization_results": {
+    "connect_time": 2.7718775272369385,
+    "expected_fps": 16.73324660566917,
+    "stability_score": 83.46649321133833,
+    "h264_errors": 0,
+    "resolution": [
+      1944,
+      2592,
+      3
+    ],
+    "test_date": "2025-07-01T16:25:24.414179"
   }
 }

@@ -68,7 +68,7 @@ class SimpleLPR:
         default_config = {
             "camera": {
                 "rtsp_urls": [
-                    "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=2",
+                    "rtsp://admin:admin@192.168.1.101/video2",
                     "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=1",
                     "rtsp://admin:admin@192.168.1.101:554/stream1"
                 ],
