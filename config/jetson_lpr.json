@@ -1,0 +1,45 @@
+{
+  "easyocr": {
+    "languages": [
+      "en"
+    ],
+    "gpu": false,
+    "model_storage_directory": "./models_cache/",
+    "download_enabled": true,
+    "optimization_level": "extreme"
+  },
+  "resource_management": {
+    "cpu_threshold": 85.0,
+    "ram_threshold": 80.0,
+    "auto_fallback": true,
+    "performance_mode": "balanced"
+  },
+  "cache": {
+    "max_entries": 50,
+    "similarity_threshold": 0.95,
+    "cleanup_interval": 300
+  },
+  "processing": {
+    "ai_every_frames": 3,
+    "yolo_confidence": 0.25,
+    "ocr_confidence": 0.3,
+    "cooldown_seconds": 5.0,
+    "roi_min_size": 20,
+    "roi_max_size": 400
+  },
+  "camera": {
+    "rtsp_urls": [
+      "rtsp://admin:admin@192.168.1.101/cam/realmonitor?channel=1&subtype=1",
+      "rtsp://admin:admin@192.168.1.101/video2"
+    ],
+    "fallback_video": "./videos/video2.mp4",
+    "connection_timeout": 5,
+    "reconnect_attempts": 3
+  },
+  "display": {
+    "show_video": true,
+    "window_scale": 0.4,
+    "fps_display": true,
+    "detection_overlay": true
+  }
+}
